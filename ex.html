@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Clarence Taylor</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/daeui.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">about</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#java">JAVA & Spring Framework</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#react">React</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#arduino">Arduino</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- JAVA & Spring Framework-->
+            <section class="resume-section" id="java">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">JAVA & Spring Framework</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">프로젝트 메인 페이지</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/spring_shop.png" style="width: 480px; height: 800px;" /></li>
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/search.png"/></li>
+                            </ul>
+                            <br>
+                            <div class="subheading mb-3">카테고리 / 상품추천 / 제품검색 / 인터셉터</div>
+                            <p>프로젝트를 실행했을 때 바로 보여지는 메인페이지에는 상품의 카테고리와 회원가입을 할 때 입력하는 사용자의 피부타입별로 상품을 추천하는 기능을 삽입했습니다. 그리고 검색, 장바구니, 로그인/로그아웃, 마이페이지로 이동할 수 있는 인터페이스를 구현했습니다. 검색기능을 구현할 때 잘못된 띄어쓰기를 했을 때 발생하는 오류를 수정하기 위해서 사용자가 입력하는 검색어에 정규표현식을 이용하였습니다. 상품추천을 구현하기 위해서 사용자의 정보를 참조하여 그에 대응하는 상품을 출력해야하는데 이 때 제품의 특징부분에서 특정단어를 포함한 제품을 사용자에게 추천하는 방식을 사용했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">상품목록 페이지</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/shop_list.png" style="width: 480px; height: 800px;" /></li>
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/shop_category_paging.png" style="width: 300px; height: 500px;"/></li>
+                            </ul>
+                            <br>
+                            <div class="subheading mb-3">상품랭킹 / 검색어별 페이징 처리 / 상품타입별 목록처리</div>
+                            <p>카테고리를 선택했을 때 보여지는 상품목록 페이지 입니다. 상품에 대한 정보를 가져오기 위해서 공공데이터포털의 Open Api를 사용해서 가져오는 방식을 선택했었습니다. 하지만 XML형식의 데이터를 자바 클래스에서 사용하기 위한 VO 형태로 변환하는 과정에서 값이 누락되는 등 문제점이 발생하여 기존방식에서 네이버 쇼핑의 화장품 카테고리에서 파이썬의 BeautifulSoup 라이브러리를 사용해서 웹크롤링해서 값을 가져오는 방식으로 전환했습니다.</p>
+                            <p>상품타입별 카테고리를 분류하기 위해서 버튼별로 타입에 맞는 숫자를 할당해 구분하는 방식을 사용했습니다. 그리고 페이징 처리를 위한 방법으로 이를 위한 클래스파일을 생성하고 상품목록을 관리하는 서버의 컨트롤러에 임포트 하여 한페이지에 12개씩 제품을 보여주는 방법으로 상품목록의 페이징 처리를 구현했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">장바구니</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/cart.png" style="width: 100%; height: 100%;"/></li>
+                            </ul>
+                            <div class="subheading mb-3">회원 ・ 비회원 장바구니 / AJAX</div>
+                            <p>장바구니를 구현하기 위해서 회원가입을 한 회원의 장바구니와 회원가입을 안하고 웹사이트에 방문한 비회원 두가지 방법이 필요했습니다. 이를 구현하기 위해서 Session 과 Cookie 를 사용하여 구현하였습니다. 회원 장바구니는 로그인을 했을 때 생성되는 Session의 Value값을 이용해서 데이터베이스에 Insert 되는 방식으로 구현 했습니다. 하지만 비회원의 경우 Session이 없기 때문에 브라우저에서 Session을 유지하기 위해서 자동으로 생성되는 고유의 ID값인 JSESSIONID의 Value값을 비회원의 고유정보로 하여 비회원 전용의 장바구니를 구현 했습니다.</p>
+                            <p>또한, 장바구니에 담겨있는 제품의 개수의 변경과 특정 품목을 삭제하고, 장바구니를 비우는 기능을 서버에 접근하는 횟수를 줄이기 위해서 AJAX로 구현하여 서버의 부하를 줄이고 사용자 측면에서도 심플하게 보일 수 있도록 하였습니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">상품평 대댓글</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/nested_reply.png" style="width: 480px; height: 520px;"/></li>
+                            </ul>
+                            <div class="subheading mb-3">대댓글 / AJAX</div>
+                            <p>상품의 상세페이지에서 상품평을 작성하는 부분에 서로의 의견을 공유할 수 있는 대댓글 기능을 구현해 보면 어떨까 하여서 구현해보게 되었습니다. 대댓글을 구현하기 위해서 대댓글에 대한 정보를 저장하기 위해서 상품평의 테이블에 종속적인 대댓글 테이블을 생성했습니다. 게시판을 구현할 때 게시글에 대한 댓글의 정보를 저장하는 방식처럼 상품평에 해당하는 대댓글을 저장할 수 있도록 구현 했습니다. 상품평이 ajax로 구현되기 때문에 하위로 생성되는 대댓글의 표현시점과 작성했을 때의 이벤트처리가 불분명해 중복으로 읽어오는 문제가 발생 했었습니다.</p>
+                            <p>이를 해결하기 위해서 상품평을 읽어오는 ajax 부분에 함수화 시킨 대댓글 ajax를 호출하는 방식으로 구현했습니다. 그리고 작성 시점을 해결하기 위해서 자바스크립트의 this를 활용하여 해결했습니다. 이 때 이벤트 처리와 시점에 대한 문제의 중요성을 느끼게 되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- React-->
+            <section class="resume-section" id="react">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">React</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">리액트 영화 평점 사이트</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/react_project.png" style="width: 50%; height: 50%;" /></li>
+                            </ul><br>
+                            <div class="subheading mb-3">OPEN API</div>
+                            <p>프론트엔드에 대한 관심을 가지고 자바스크립트기반으로 만들어진 리액트를 사용해서 만들어 본 영화 평점 사이트 입니다. 영화의 정보를 호출하기 위해서 JSON 형태로 배포되는 Open Api를 사용해서 영화의 포스터, 제목, 평점, 줄거리 등 다양한 정보를 가져와서 사용자에게 보여지는 방식으로 구현 했습니다.</p>
+                            <p>프론트엔드를 구현하는데 있어 새로운 방법을 습득하는 계기가 되었습니다. 자바스크립트와 HTML 태그를 혼합한 형식의 개발언어를 보고 처음에는 매우 혼동하여 사용했지만 개발에 대한 흐름은 같다는 걸 깨달았습니다. 이러한 경험 덕분에 다양한 언어에 대해서 배워보고 싶다는 생각을 가지게 되고 프로그래밍 언어의 큰 흐름을 배우게 되었습니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">리액트 TO-DO 리스트 사이트</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/react_todo.png" style="width: 50%; height: 50%;"/></li>
+                            </ul><br>
+                            <div class="subheading mb-3">PLAT Project</div>
+                            <p>리액트 영화 평점 사이트를 제작해보고 리액트라는 라이브러리에 대해서 흥미를 느껴 만든 프로젝트 입니다. 오늘 내가 할일을 작성하고 체크해 나가면서 해야 할 일을 체크 할 수 있는 간단한 형식의 프로그램 입니다. 처음으로 자신의 필요로 인해 만들어본 프로젝트 입니다. 개발을 하는데 있어 아이디어는 사람들이 불편하거나 필요로하는 부분에서 발전할 수 있다는것을 깨달은 계기가 된 프로젝트 입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            
+            <!-- Arduino-->
+            <section class="resume-section" id="arduino">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Arduino</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">개발 개념도</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/seat_sensor1.png" style="width: 100%; height: 100%;"/></li>
+                            </ul><br>
+                            <div class="subheading mb-3">자세에 따른 센서 인식</div>
+                            <p>아두이노와 압력센서를 이용한 자세교정의자를 제작하기 위해서 자세에 따른 무게의 분포를 알아햐 한다고 생각했었습니다. 특히 다리를 꼰 자세에서는 무게중심의 분포가 일반적이지 않은 분포를 보이기 떄문에 이점을 신경쓰고 개발해야 했습니다. 또한 사용자의 골반의 구조 몸무게에 따라 압력이 변화하기 때문에 이점을 보완할 필요를 느꼈습니다. 이것을 해결 하기 위해서 직접 실험해보고 데이터를 수집하는 과정이 꼭 필요했습니다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">실제 구현</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/seat_sensor4.png" style="width: 100%; height: 100%;"/></li>
+                            </ul><br>
+                            <div class="subheading mb-3">어플리케이션과 아두이노의 블루투스 연동</div>
+                            <p>제품을 제작하고 사용자에게 시각적으로 표현할 수 있는 방법을 생각했습니다. 이를 위해서 아두이노와 어플리케이션 사이에 블루투스 통신을 하는것이 해결책 이었습니다. 이 때 아두이노의 블루투스 모듈을 사용해서 어플리케이션과 시리얼 통신을 성공 했습니다. 이 때 편의성을 위한 무선연결의 필요성을 느끼게 되었고 무선연결의 어려움 또한 겪게 되었습니다. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
