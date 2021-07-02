@@ -27,8 +27,8 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">about</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#java">JAVA & Spring Framework</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#aws">AWS - EC2</a></li>                    
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#react">React</a></li>
-                    
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#arduino">Arduino</a></li>
                 </ul>
             </div>
@@ -128,6 +128,85 @@
                             <div class="subheading mb-3">대댓글 / AJAX</div>
                             <p>상품의 상세페이지에서 상품평을 작성하는 부분에 서로의 의견을 공유할 수 있는 대댓글 기능을 구현해 보면 어떨까 하여서 구현해보게 되었습니다. 대댓글을 구현하기 위해서 대댓글에 대한 정보를 저장하기 위해서 상품평의 테이블에 종속적인 대댓글 테이블을 생성했습니다. 게시판을 구현할 때 게시글에 대한 댓글의 정보를 저장하는 방식처럼 상품평에 해당하는 대댓글을 저장할 수 있도록 구현 했습니다. 상품평이 ajax로 구현되기 때문에 하위로 생성되는 대댓글의 표현시점과 작성했을 때의 이벤트처리가 불분명해 중복으로 읽어오는 문제가 발생 했었습니다.</p>
                             <p>이를 해결하기 위해서 상품평을 읽어오는 ajax 부분에 함수화 시킨 대댓글 ajax를 호출하는 방식으로 구현했습니다. 그리고 작성 시점을 해결하기 위해서 자바스크립트의 this를 활용하여 해결했습니다. 이 때 이벤트 처리와 시점에 대한 문제의 중요성을 느끼게 되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- AWS -->
+            <section class="resume-section" id="aws">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">AWS - EC2</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">AWS를 이용한 프로젝트 배포</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws1.png"  /></li>
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws2.png" style="padding-top: 30px" /></li>
+
+                            </ul><br>
+                            <div class="subheading mb-3">1. AWS EC2 가상서버 생성</div>
+                            <p>AWS 계정 생성과 EC2 가상서버를 생성한 후, 서버에서 사용되어질 네트워크 포트에 대한 포트 범위와 IP허용 범위를 설정해준다. 우분투 환경에 오라클DB를 설치하지 않고 ORACLE RDS를 내가 사용하는 Sql Developer를 사용하여 연동해 줄 것이다. 그리고 SSH를 통해 EC2에 접속해야하기 때문에 AWS에서 제공하는 PEM 파일을 생성한다.</p>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws3.png" style="padding-top: 30px" /></li>
+                            </ul>
+                            <div class="subheading mb-3">2. AWS EC2 접속</div>
+                            <p>터미널을 통해 PEM파일의 권한을 400으로 변경해준 후, 해당 PEM파일을 사용하여 AWS에서 생성한 내 서버를 CLI형식으로 접근할 수 있게 된다.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">JAVA & Tomcat 설치 및 환경변수 설정</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws4.png" /></li>
+
+                            </ul><br>
+                            <div class="subheading mb-3">1. JAVA 설치 및 환경변수 설정</div>
+                            <p style="color: red;">sudo apt-get update</p>
+                            <p style="color: red;">sudo apt-get upgrade</p>  
+                            <p>두개의 명령어를 통해 우분투의 패키지관리 도구를 업데이트 해준다.</p>
+                            <p style="color: red;">sudo apt-get install openjdk-8-jre</p>
+                            <p style="color: red;">sudo apt-get install openjdk-8-jdk</p>
+                            <p>명령어로 JDK 와 JRE를 설치한다. JAVA에 대한 환경변수를 sudo nano /etc/profile 을 입력, 나노편집기를 이용하여 위의 3줄을 추가하여 환경변수 설정을 완료한다.</p>
+
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws5.png" style="padding-top: 30px;" /></li>
+                            </ul><br>
+                            <div class="subheading mb-3">2. Tomcat 설치 및 환경변수 설정</div>
+                            <p style="color: red;">sudo apt-get install tomcat8</p>
+                            <p style="color: red;">sudo ufw allow 8080/tcp</p>
+                            <p>위의 두개의 명령어로 8버전의 톰캣을 설치해준다. 그리고 외부에서 8080포트로 접근하려고 할때 방화벽이 열려있도록 하기 위해서 방화벽의 규칙을 지정해주는 명령어를 사용한다.</p>
+                            <p style="color: red;">sudo service tomcat8 start</p>
+                            <p>명령어를 사용하여 톰캣서버를 실행해준다. 그리고 내가 생성한 AWS서버의 IP + :8080을 웹 브라우저에서 입력해주면 위와 같은 톰캣실행이 정상적으로 되는것을 볼 수 있다.</p>
+                            
+
+
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">FileZilla를 이용한 war파일 전송</h3>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws6.png" /></li>
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws7.png" style="padding-top:20px;" /></li>
+                            </ul><br>
+                            <div class="subheading mb-3">1. FileZilla를 이용한 AWS SFTP 접속</div>
+                            <p>FTP 프로그램인 FileZilla를 설치한후 AWS와 연결하기 위해서 SFTP를 사용한다. 연결하기 위해서 다운로드 받은 PEM파일을 FileZilla에 등록해준다. 그 다음 사이트 설정을 통해 AWS에 연동해준다. 호스트는 AWS 인스턴스에 주어지는 IPV4 퍼블릭DNS를 적어주면 되고 사용자 명에는 AWS가상 컨테이너에 설치된 우분투에서 배포를 하는데 사용되는 계정명을 적어주고 연결해주면 된다.</p>
+                            <br>
+                            <ul class="list-inline dev-icons">
+                                <li class="list-inline-item"><img class="img_src" src="assets/img/aws8.png" /></li>
+                                
+                            </ul><br>
+                            <div class="subheading mb-3">2. WAR 파일 전송</div>
+                            <p style="color: red;">/var/lib/tomcat8/webapps</p>
+                            <p>위의 디렉토리 아래에 이클립스에서 제작한 스프링 프로젝트를 war 형태로 export한 파일을 드래그해주면 된다.</p>
+                            <p>sudo service tomcat8 restart</p>
+                            <p>명령어를 사용하면 로컬호스트에서 제작하던 프로그램을 다양한 사용자가 접속할 수 있는 형태로 배포가능하다.</p>
+                            <a href="3.37.85.147:8080">3.37.85.147:8080</a>
+                            <p>위 아이피에 접속하면 내가 제작한 스프링 프로젝트에 접속이 가능하다.</p>
                         </div>
                     </div>
                 </div>
